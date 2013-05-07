@@ -1,0 +1,325 @@
+
+
+/* Basics */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: .5em;
+}
+h1 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+p {
+
+    margin-bottom: 1.5em;
+}
+nav {
+    background: #efede9;
+    border: 1px solid #bfbeba;
+    position: relative;
+    width: 14em;
+    height: 14em;
+}
+/* Some helper classes from the HTML5 Boilerplate  */
+/*        .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }*/
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+
+/* The toggle */
+label[for="shownav"], .menu, input#shownav {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    padding: 0;
+    margin: 0;
+}
+input#shownav,
+input#shownav:checked {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: transparent;
+    outline: none;
+    height: 2.4em;
+    width: 2.4em;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+}
+label[for="shownav"], .menu a {
+    /* Basis for the circles */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #949390, 0px .1em .15em 4px #bdbbb7;
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #949390, 0px .1em .15em 4px #bdbbb7;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #949390, 0px .1em .15em 4px #bdbbb7;
+
+}
+label[for="shownav"] {
+    display: block;
+    color: #fff;
+    z-index: 3; /* to initially overlap the navigation items */
+    height: 1em;
+    width: 1em;
+    line-height: 1;
+    font-size: 2.4em;
+    cursor: pointer;
+    pointer-events: none;
+
+    background-color: #e76040;
+    background-image: -webkit-gradient(radial, 50% 100%,100,50% -50%,100, from(rgb(207, 41, 21)), to(rgb(231, 96, 64)));
+    background-image: -webkit-radial-gradient(50% 0%, rgb(231, 96, 64), rgb(207, 41, 21));
+    background-image: -moz-radial-gradient(50% 0%, rgb(231, 96, 64), rgb(207, 41, 21));
+    background-image: -ms-radial-gradient(50% 0%, rgb(231, 96, 64), rgb(207, 41, 21));
+    background-image: radial-gradient(50% 0%, rgb(231, 96, 64), rgb(207, 41, 21));
+}
+label[for="shownav"]:before {
+    content: "+";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+
+    font-family: "Courier", "Courier New", monospace;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-indent: 0;
+    text-shadow: 0 -1px 0 #cf2915;
+}
+input:checked + label[for="shownav"]:before {
+    /* compensate the font-size for the rotation */
+    font-size: 1.06em;
+    height: .943396226em; /* 1em/1.06em */
+    width: .943396226em; /* 1em/1.06em */
+    line-height: .943396226em; /* 1em/1.06em */
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    filter: progid:DXImageTransform.Microsoft.Matrix(                     M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476, sizingMethod='auto expand');
+    zoom: 1;
+}
+
+/* Navigation elements  */
+.menu {
+    z-index: 1; /* should be lower than z-index of the label */
+    height: 2.4em;
+    width: 2.4em;
+}
+.menu li {
+    list-style: none;
+}
+.menu a {
+    /* First of all we align centers of the navigation elements with the center of the circle */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    padding: .25em;
+    margin-top: .45em; /* (2.4em - 1em)/2 - 0.25 */
+    margin-left: .45em;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    background: #444;
+    color: #fff;
+
+    -webkit-transition-property: -webkit-transform, left, top;
+    -webkit-transition-timing-function: ease-out, cubic-bezier(.59,-0.99,.5,.96), cubic-bezier(.59,-0.99,.5,.96);
+    -moz-transition-property: -moz-transform, left, top;
+    -moz-transition-timing-function: ease-out, cubic-bezier(.59,-0.99,.5,.96), cubic-bezier(.59,-0.99,.5,.96);
+    -ms-transition-property: -ms-transform, left, top;
+    -ms-transition-timing-function: ease-out, cubic-bezier(.59,-0.99,.5,.96), cubic-bezier(.59,-0.99,.5,.96);
+    -o-transition-property: -o-transform, left, top;
+    -o-transition-timing-function: ease-out, cubic-bezier(.59,-0.99,.5,.96), cubic-bezier(.59,-0.99,.5,.96);
+    transition-property: transform, left, top;
+    transition-timing-function: ease-out, cubic-bezier(.59,-0.99,.5,.96), cubic-bezier(.59,-0.99,.5,.96);
+}
+input:checked ~ .menu a {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+
+    -webkit-transition-property: left, top, -webkit-transform;
+    -webkit-transition-timing-function: cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+    -moz-transition-property: left, top, -moz-transform;
+    -moz-transition-timing-function: cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+    -ms-transition-property: left, top, -ms-transform;
+    -ms-transition-timing-function: cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+    -o-transition-property: left, top, -o-transform;
+    -o-transition-timing-function: cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+    transition-property: left, top, transform;
+    transition-timing-function: cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+}
+/* Coordinates of the dots on the circle */
+/* top:  sin(deg) * R * -1     */
+/* left:  cos(deg) * R    */
+.menu li:nth-child(1) a {
+    -webkit-transition-duration: .5s, .3s, .3s;
+    -moz-transition-duration: .5s, .3s, .3s;
+    -o-transition-duration: .5s, .3s, .3s;
+    -ms-transition-duration: .5s, .3s, .3s;
+    transition-duration: .5s, .3s, .3s;
+
+    -webkit-transition-delay: 0, .4s, .4s;
+    -moz-transition-delay: 0, .4s, .4s;
+    -o-transition-delay: 0, .4s, .4s;
+    -ms-transition-delay: 0, .4s, .4s;
+    transition-delay: 0, .4s, .4s;
+}
+
+input:checked ~ .menu li:nth-child(1) a {
+    top: -7em;
+    left: 0;
+
+    -webkit-transition-duration: .2s, .2s, .3s;
+    -moz-transition-duration: .2s, .2s, .3s;
+    -o-transition-duration: .2s, .2s, .3s;
+    -ms-transition-duration: .2s, .2s, .3s;
+    transition-duration: .2s, .2s, .3s;
+
+    -webkit-transition-delay: 0, 0, 0;
+    -moz-transition-delay: 0, 0, 0;
+    -o-transition-delay: 0, 0, 0;
+    -ms-transition-delay: 0, 0, 0;
+    transition-delay: 0, 0, 0;
+}
+
+.menu li:nth-child(2) a {
+    -webkit-transition-duration: .5s, .3s, .3s;
+    -moz-transition-duration: .5s, .3s, .3s;
+    -o-transition-duration: .5s, .3s, .3s;
+    -ms-transition-duration: .5s, .3s, .3s;
+    transition-duration: .5s, .3s, .3s;
+
+    -webkit-transition-delay: 0, .35s, .35s;
+    -moz-transition-delay: 0, .35s, .35s;
+    -o-transition-delay: 0, .35s, .35s;
+    -ms-transition-delay: 0, .35s, .35s;
+    transition-delay: 0, .35s, .35s;
+}
+
+input:checked ~ .menu li:nth-child(2) a {
+    top: -6.46715672758em;
+    left: 2.67878402656em;
+
+    -webkit-transition-duration: .2s, .2s, .3s;
+    -moz-transition-duration: .2s, .2s, .3s;
+    -o-transition-duration: .2s, .2s, .3s;
+    -ms-transition-duration: .2s, .2s, .3s;
+    transition-duration: .2s, .2s, .3s;
+
+    -webkit-transition-delay: 0.05s, 0.05s, .1s;
+    -moz-transition-delay: 0.05s, 0.05s, .1s;
+    -o-transition-delay: 0.05s, 0.05s, .1s;
+    -ms-transition-delay: 0.05s, 0.05s, .1s;
+    transition-delay: 0.05s, 0.05s, .1s;
+}
+
+.menu li:nth-child(3) a {
+    -webkit-transition-duration: .5s, .3s, .3s;
+    -moz-transition-duration: .5s, .3s, .3s;
+    -o-transition-duration: .5s, .3s, .3s;
+    -ms-transition-duration: .5s, .3s, .3s;
+    transition-duration: .5s, .3s, .3s;
+
+    -webkit-transition-delay: 0, .3s, .3s;
+    -moz-transition-delay: 0, .3s, .3s;
+    -o-transition-delay: 0, .3s, .3s;
+    -ms-transition-delay: 0, .3s, .3s;
+    transition-delay: 0, .3s, .3s;
+}
+
+input:checked ~ .menu li:nth-child(3) a {
+    top: -4.94974746831em;
+    left: 4.94974746831em;
+
+    -webkit-transition-duration: .2s, .2s, .3s;
+    -moz-transition-duration: .2s, .2s, .3s;
+    -o-transition-duration: .2s, .2s, .3s;
+    -ms-transition-duration: .2s, .2s, .3s;
+    transition-duration: .2s, .2s, .3s;
+
+    -webkit-transition-delay: .1s, .1s, .1s;
+    -moz-transition-delay: .1s, .1s, .1s;
+    -o-transition-delay: .1s, .1s, .1s;
+    -ms-transition-delay: .1s, .1s, .1s;
+    transition-delay: .1s, .1s, .1s;
+}
+
+.menu li:nth-child(4) a {
+    -webkit-transition-duration: .5s, .3s, .3s;
+    -moz-transition-duration: .5s, .3s, .3s;
+    -o-transition-duration: .5s, .3s, .3s;
+    -ms-transition-duration: .5s, .3s, .3s;
+    transition-duration: .5s, .3s, .3s;
+
+    -webkit-transition-delay: 0, .25s, .25s;
+    -moz-transition-delay: 0, .25s, .25s;
+    -o-transition-delay: 0, .25s, .25s;
+    -ms-transition-delay: 0, .25s, .25s;
+    transition-delay: 0, .25s, .25s;
+}
+
+input:checked ~ .menu li:nth-child(4) a {
+    top: -2.67878402656em;
+    left: 6.46715672758em;
+
+    -webkit-transition-duration: .2s, .2s, .3s;
+    -moz-transition-duration: .2s, .2s, .3s;
+    -o-transition-duration: .2s, .2s, .3s;
+    -ms-transition-duration: .2s, .2s, .3s;
+    transition-duration: .2s, .2s, .3s;
+
+    -webkit-transition-delay: .15s, .15s, .1s;
+    -moz-transition-delay: .15s, .15s, .1s;
+    -o-transition-delay: .15s, .15s, .1s;
+    -ms-transition-delay: .15s, .15s, .1s;
+    transition-delay: .15s, .15s, .1s;
+}
+
+.menu li:nth-child(5) a {
+    -webkit-transition-duration: .5s, .3s, .3s;
+    -moz-transition-duration: .5s, .3s, .3s;
+    -o-transition-duration: .5s, .3s, .3s;
+    -ms-transition-duration: .5s, .3s, .3s;
+    transition-duration: .5s, .3s, .3s;
+
+    -webkit-transition-delay: 0, .2s, .2s;
+    -moz-transition-delay: 0, .2s, .2s;
+    -o-transition-delay: 0, .2s, .2s;
+    -ms-transition-delay: 0, .2s, .2s;
+    transition-delay: 0, .2s, .2s;
+}
+
+input:checked ~ .menu li:nth-child(5) a {
+    top: 0em;
+    left: 7em;
+
+    -webkit-transition-duration: .2s, .2s, .3s;
+    -moz-transition-duration: .2s, .2s, .3s;
+    -o-transition-duration: .2s, .2s, .3s;
+    -ms-transition-duration: .2s, .2s, .3s;
+    transition-duration: .2s, .2s, .3s;
+
+    -webkit-transition-delay: .2s, .2s, .1s;
+    -moz-transition-delay: .2s, .2s, .1s;
+    -o-transition-delay: .2s, .2s, .1s;
+    -ms-transition-delay: .2s, .2s, .1s;
+    transition-delay: .2s, .2s, .1s;
+}
