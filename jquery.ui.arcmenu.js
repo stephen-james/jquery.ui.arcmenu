@@ -25,6 +25,7 @@ $(function() {
             // decorate the dom elements
             menu
                 .addClass("ui-arcmenu")
+                .addClass("ui-arcmenu-closed")
                 .wrap("<div class='ui-arcmenu-container'></div>");
 
             menuItems
@@ -104,6 +105,10 @@ $(function() {
                 });
             }
 
+            menu
+                .removeClass("ui-arcmenu-closed")
+                .addClass("ui-arcmenu-open");
+
             if (options.autoCloseWithTimer) {
                 var match = self.autoTimerEventStillValidMatcher;
                 setTimeout(function(){ if (self.autoTimerEventStillValidMatcher == match) { self.closeMenu.apply(self); } }, options.autoCloseTimeoutInMillis);
@@ -135,6 +140,10 @@ $(function() {
                             "left" : 0
                         });
                 });
+
+            menu
+                .removeClass("ui-arcmenu-open")
+                .addClass("ui-arcmenu-closed");
 
             if (self.options.openAsModal) {
                 $(".ui-arcmenu-modal-panel").remove();
