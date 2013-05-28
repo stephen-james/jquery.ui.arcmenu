@@ -16,16 +16,17 @@ html, body
 
 .transform-rotate(@degrees:360deg)
 {
-  -webkit-transform: rotate(@degrees);
-      -ms-transform: rotate(@degrees);
+  -webkit-transform: -webkit-rotate(@degrees);
+      -ms-transform: -ms-rotate(@degrees);
           transform: rotate(@degrees);
 }
 
 .transform-scale(@ratioX:1, @ratioY:1)
 {
   -webkit-transform: scale(@ratioX, @ratioY);
-  -ms-transform: scale(@ratioX, @ratioY);
-  transform: scale(@ratioX, @ratioY);
+     -moz-transform: scale(@ratioX, @ratioY);
+      -ms-transform: scale(@ratioX, @ratioY);
+          transform: scale(@ratioX, @ratioY);
 }
 
 .ui-arcmenu
@@ -55,12 +56,19 @@ html, body
 
 .ui-arcmenu-open-easing
 {
-  transition-timing-function : cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+  -webkit-transition-timing-function : cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+     -moz-transition-timing-function : cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+          transition-timing-function : cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
+//  -webkit-transition-timing-function : ease-out, ease-out, ease-out;
+//     -moz-transition-timing-function : ease-out, ease-out, ease-out;
+//          transition-timing-function : ease-out, ease-out, ease-out;
+
 }
 
 .ui-arcmenu-close-easing
 {
   transition-timing-function : cubic-bezier(.59,-0.99,.5,.96), cubic-bezier(.59,-0.99,.5,.96), ease-out;
+//  transition-timing-function : ease-out, ease-out, ease-out;
 
   .transform-rotate(360deg);
 }
@@ -74,40 +82,57 @@ html, body
 .ui-arcmenu-item
 {
   display : -webkit-box;
-  -webkit-box-orient : horizontal;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-
   display : -moz-box;
-  -moz-box-orient : horizontal;
-  -moz-box-pack: center;
-  -moz-box-align: center;
+  display : box;
+
+  -webkit-box-orient : horizontal;
+     -moz-box-orient : horizontal;
+          box-orient : horizontal;
+
+
+  -webkit-box-pack : center;
+     -moz-box-pack : center;
+          box-pack : center;
+
+
+  -webkit-box-align : center;
+     -moz-box-align : center;
+          box-align : center;
 
   background-color : #214a5c;
 
   position : absolute;
   width : 50px;
   height: 50px;
-  border-radius : 50%;
+
+  -webkit-border-radius : 50%;
+     -moz-border-radius : 50%;
+          border-radius : 50%;
+
   text-align : center;
   padding : 5px;
 
   box-sizing: border-box;
 
   -webkit-transition-property : left, top, -webkit-transform;
-  transition-property : left, top, transform;
-  transition-duration : .2s, .2s, .5s;
+     -moz-transition-property : left, top, -moz-transform;
+          transition-property : left, top, transform;
+
+  -webkit-transition-duration : .2s, .2s, .5s;
+     -moz-transition-duration : .2s, .2s, .5s;
+          transition-duration : .2s, .2s, .5s;
 
   border : 5px solid #b3ac82;
 
-  -moz-box-shadow: 1px 1px 3px #888;
-  -webkit-box-shadow: 1px 1px 3px #888;
-  box-shadow: 1px 1px 3px #888;
+  -webkit-box-shadow : 1px 1px 3px #888;
+     -moz-box-shadow : 1px 1px 3px #888;
+          box-shadow : 1px 1px 3px #888;
 
   z-index : 20000;
 
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  -webkit-box-sizing : border-box;
+     -moz-box-sizing : border-box;
+          box-sizing : border-box;
 
   opacity : 1;
 }
@@ -130,7 +155,6 @@ html, body
   position : absolute;
   top: 0px;
   left: 0px;
-
 }
 
 .ui-arcmenu-subitem

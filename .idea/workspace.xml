@@ -4,25 +4,39 @@
     <list default="true" id="be1686da-21fe-45f7-86d6-fab633d35edf" name="Default" comment="" />
     <ignored path="jquery.ui.arcmenu.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1367927975888" ignored="false" />
-    <file path="/jquery.ui.arcmenu.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1367926350556" ignored="false" />
-    <file path="$PROJECT_DIR$/../jquery.ui.interest/jquery.ui.interest.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1365682082015" ignored="false" />
-    <file path="/jquery.ui.arcmenu.css" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366125599096" ignored="false" />
-    <file path="$PROJECT_DIR$/../Classes/js/tests/SpecRunner.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366042678051" ignored="false" />
-    <file path="/SpecRunner.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366042676973" ignored="false" />
-    <file path="$PROJECT_DIR$/../Classes/js/tests/Class-spec.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366188827754" ignored="false" />
-    <file path="/Class-spec.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366046516628" ignored="false" />
-    <file path="$PROJECT_DIR$/../Classes/js/Class.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366039395830" ignored="false" />
-    <file path="/Class.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366104336488" ignored="false" />
-    <file path="$PROJECT_DIR$/../Classes/Class.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366188827754" ignored="false" />
-    <file path="/jquery.ui.arcmenu.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1367924757509" ignored="false" />
+    <file path="/index3.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368446964190" ignored="false" />
+    <file path="$PROJECT_DIR$/../GestureChart/index3.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368523891362" ignored="false" />
+    <file path="/Dummy.txt" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368178863130" ignored="false" />
+    <file path="$PROJECT_DIR$/../RequireJsAmdExample/package.json" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368093839106" ignored="false" />
+    <file path="$PROJECT_DIR$/../RequireJsAmdExample/demo/config.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368093199392" ignored="false" />
+    <file path="/config.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368093197043" ignored="false" />
+    <file path="$PROJECT_DIR$/../RequireJsAmdExample/libs/jquery-ui/jquery-ui-1.10.3.custom.css" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368089573904" ignored="false" />
+    <file path="$PROJECT_DIR$/../RequireJsAmdExample/index.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368113452836" ignored="false" />
+    <file path="$PROJECT_DIR$/../RequireJsAmdExample/demo/app.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368093222267" ignored="false" />
+    <file path="/loader.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368032552438" ignored="false" />
+    <file path="/Gruntfile.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368024635638" ignored="false" />
+    <file path="/package.json" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368093686273" ignored="false" />
+    <file path="/app.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368533078489" ignored="false" />
+    <file path="$PROJECT_DIR$/../GestureChart/css/app.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1368534203742" ignored="false" />
+    <file path="$PROJECT_DIR$/../GestureChart/css/jquery.ui.arcmenu.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1367935060429" ignored="false" />
+    <file path="/app.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1369731953170" ignored="false" />
+    <file path="$PROJECT_DIR$/../GestureChart/js/lib/app.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1369731955737" ignored="false" />
+    <file path="$PROJECT_DIR$/../GestureChart/index.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1369412498338" ignored="false" />
     <file path="/font-awesome.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366380141016" ignored="false" />
-    <file path="$PROJECT_DIR$/../GestureChart/index.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366805151324" ignored="false" />
-    <file path="$PROJECT_DIR$/../GestureChart/js/lib/app.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1367399766468" ignored="false" />
-    <file path="/app.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366886467819" ignored="false" />
-    <file path="$PROJECT_DIR$/../GestureChart/css/jquery.ui.arcmenu.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366803126715" ignored="false" />
-    <file path="$PROJECT_DIR$/../GestureChart/css/app.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366802158703" ignored="false" />
-    <file path="/app.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366802152253" ignored="false" />
+    <file path="/jquery.ui.arcmenu.less" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1367934974032" ignored="false" />
+    <file path="$PROJECT_DIR$/../Classes/Class.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366188827754" ignored="false" />
+    <file path="/Class.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366104336488" ignored="false" />
+    <file path="$PROJECT_DIR$/../Classes/js/Class.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366039395830" ignored="false" />
+    <file path="/Class-spec.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366046516628" ignored="false" />
+    <file path="$PROJECT_DIR$/../Classes/js/tests/Class-spec.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366188827754" ignored="false" />
+    <file path="/SpecRunner.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366042676973" ignored="false" />
+    <file path="$PROJECT_DIR$/../Classes/js/tests/SpecRunner.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366042678051" ignored="false" />
+    <file path="/jquery.ui.arcmenu.css" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1366125599096" ignored="false" />
+    <file path="$PROJECT_DIR$/../jquery.ui.interest/jquery.ui.interest.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1365682082015" ignored="false" />
+    <file path="/jquery.ui.arcmenu.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1369759951934" ignored="false" />
+    <file path="/index.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1369412387202" ignored="false" />
+    <file path="$PROJECT_DIR$/../callAndWaitFor/index.html" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1369302259890" ignored="false" />
+    <file path="$PROJECT_DIR$/../GestureChart/js/vendor/jquery.ui.arcmenu.js" changelist="be1686da-21fe-45f7-86d6-fab633d35edf" time="1369731955737" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,37 +56,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="21" selection-start="550" selection-end="550" vertical-scroll-proportion="-9.807693">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.ui.arcmenu.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jquery.ui.arcmenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="0" selection-start="5425" selection-end="5425" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="font-awesome.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/less/font-awesome.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="14" selection-start="2194" selection-end="2194" vertical-scroll-proportion="-19.04">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="font-awesome-ie7.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/less/font-awesome-ie7.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="52" selection-start="2244" selection-end="2244" vertical-scroll-proportion="-19.04">
+            <state line="21" column="3" selection-start="1081" selection-end="1081" vertical-scroll-proportion="14.28">
               <folding />
             </state>
           </provider>
@@ -81,14 +68,52 @@
       <file leaf-file-name="demo.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/demo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="34" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0">
+            <state line="292" column="38" selection-start="9760" selection-end="9760" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="less-1.3.3.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/vendor/less-1.3.3.min.js">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="25" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loader.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/loader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="3" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/jquery.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-ui.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/jquery-ui.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="27" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="less.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/less.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -96,19 +121,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.ui.arcmenu.less" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/style/less/jquery.ui.arcmenu.less">
+      <file leaf-file-name="require.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/require.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="0" selection-start="2601" selection-end="2601" vertical-scroll-proportion="0.90189123">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="7" selection-start="343" selection-end="343" vertical-scroll-proportion="-5.8846154">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-ui-1.10.2.custom.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/vendor/jquery-ui-1.10.2.custom.min.js">
+      <file leaf-file-name="jquery.ui.arcmenu.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jquery.ui.arcmenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="27" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
+            <state line="18" column="0" selection-start="526" selection-end="526" vertical-scroll-proportion="0.36734694">
               <folding />
             </state>
           </provider>
@@ -124,13 +160,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/style/demo.css" />
-        <option value="$PROJECT_DIR$/style/jquery.ui.arcmenu.css" />
         <option value="$PROJECT_DIR$/style/less/css3.mixins.less" />
         <option value="$PROJECT_DIR$/style/less/font-awesome.less" />
         <option value="$PROJECT_DIR$/jquery.ui.arcmenu.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/lib/loader.js" />
+        <option value="$PROJECT_DIR$/index2.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/../DataStructures.Tree/DataStructures.Tree/js/lib/tests/test.html" />
+        <option value="$PROJECT_DIR$/test/testdriver.html" />
+        <option value="$PROJECT_DIR$/../DataStructures.Tree/DataStructures.Tree/js/lib/tests/tree.js" />
+        <option value="$PROJECT_DIR$/test/css_support.js" />
+        <option value="$PROJECT_DIR$/demo/loader.js" />
+        <option value="$PROJECT_DIR$/demo/app.js" />
         <option value="$PROJECT_DIR$/style/less/jquery.ui.arcmenu.less" />
+        <option value="$PROJECT_DIR$/src/jquery.ui.arcmenu.js" />
       </list>
     </option>
   </component>
@@ -227,11 +272,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="font" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,11 +286,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery.ui.arcmenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery.ui.arcmenu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="demo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -261,30 +312,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-  </component>
-  <component name="PublishConfig">
-    <servers>
-      <server id="388bb257-2d76-428b-a154-3b956f8e71b9">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-      <server id="9e15d206-42fe-40e1-9c57-b7795d588309">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-    </servers>
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu" />
       <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu\style\less" />
       <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu\style" />
       <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu\js\vendor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu\demo" />
+      <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu\lib" />
+      <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu" />
+      <recent name="C:\Users\SJames\Dropbox\Code\jquery.ui.arcmenu\js\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -296,9 +337,33 @@
       <option name="testName" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="be1686da-21fe-45f7-86d6-fab633d35edf" name="Default" comment="" />
@@ -314,10 +379,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24775963" sideWeight="0.9889197" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35740644" sideWeight="0.996063" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -390,114 +455,118 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/style/less/jquery.ui.arcmenu.less">
+    <entry file="file://$PROJECT_DIR$/test/testdriver.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="2675" selection-end="2675" vertical-scroll-proportion="0.0">
+        <state line="9" column="6" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/vendor/jquery-ui-1.10.2.custom.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="5" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jquery.ui.arcmenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="51" selection-start="5758" selection-end="5758" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/vendor/less-1.3.3.min.js">
+    <entry file="file://$PROJECT_DIR$/test/qunit-1.11.0.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/less/jquery.ui.arcmenu.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="2190" selection-end="2272" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/vendor/jquery-ui-1.10.2.custom.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/vendor/jquery-ui-1.10.2.custom.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/vendor/less-1.3.3.min.js">
+    <entry file="file://$PROJECT_DIR$/test/qunit-1.11.0.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/demo.css">
+    <entry file="file://$PROJECT_DIR$/test/css_support.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="34" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0">
+        <state line="9" column="0" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/less/font-awesome.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="14" selection-start="2194" selection-end="2194" vertical-scroll-proportion="-19.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/less/font-awesome-ie7.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="52" selection-start="2244" selection-end="2244" vertical-scroll-proportion="-19.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jquery.ui.arcmenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="0" selection-start="5425" selection-end="5425" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="550" selection-end="550" vertical-scroll-proportion="-9.807693">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/less/jquery.ui.arcmenu.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="2601" selection-end="2601" vertical-scroll-proportion="0.90189123">
+        <state line="82" column="1" selection-start="2468" selection-end="2468" vertical-scroll-proportion="26.68">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="7" selection-start="343" selection-end="343" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/less/font-awesome-ie7.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="3" selection-start="1081" selection-end="1081" vertical-scroll-proportion="14.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="292" column="38" selection-start="9760" selection-end="9760" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="25" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="3" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jquery-ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="27" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/less.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/require.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jquery.ui.arcmenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="526" selection-end="526" vertical-scroll-proportion="0.36734694">
           <folding />
         </state>
       </provider>

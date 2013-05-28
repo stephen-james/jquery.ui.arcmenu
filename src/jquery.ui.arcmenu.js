@@ -11,9 +11,17 @@ $(function() {
             openAsModal : true,
             autoCloseWithTimer : true,
             autoCloseTimeoutInMillis : 3000,
-            context : undefined,
             itemClickHandler : undefined
         },
+
+        // caller that initiated the arcmenu
+        caller : undefined,
+
+        // the timer used for auto collapse
+        timer : undefined,
+
+        // validation mather for event matching
+        autoTimerEventStillValidMatcher : 1,
 
         _create : function() {
             var self = this,
@@ -44,12 +52,18 @@ $(function() {
                 .css({
                         "left" : 0,
                         "top" : options.size - options.itemSize + "px"
-                    })
-                .click(function(){
-                    if(self.itemClicked) { self.itemClicked(this, self.caller); }
-                });
+                    });
 
-           // bind events
+            self.bindEvents();
+        },
+
+        bindEvents : function() {
+            var self = this,
+                options = self.options,
+                menu = self.element,
+                menuItems = menu.children();
+
+            // Bind Menu open and close triggers
             $(options.target).on(options.trigger, function(){
                 // keep track of the element that triggered this event
                 self.caller = this;
@@ -61,6 +75,21 @@ $(function() {
                 self.closeMenu.apply(self);
             });
 
+            // Bind Menu Item events
+            menuItems
+                .click(function(){
+                    if(self.itemClicked) { self.itemClicked(this, self.caller); }
+                })
+                .hover(
+                function onHover(){
+                    clearInterval(self.timer);
+                },
+                function onHoverOut() {
+                    self.setAutoCollapseTimeout();
+                }
+            );
+
+            // assign handler for when an arc menu item is clicked
             if (options.itemClickHandler) {
                 self.itemClicked = options.itemClickHandler;
             }
@@ -109,10 +138,7 @@ $(function() {
                 .removeClass("ui-arcmenu-closed")
                 .addClass("ui-arcmenu-open");
 
-            if (options.autoCloseWithTimer) {
-                var match = self.autoTimerEventStillValidMatcher;
-                setTimeout(function(){ if (self.autoTimerEventStillValidMatcher == match) { self.closeMenu.apply(self); } }, options.autoCloseTimeoutInMillis);
-            }
+            self.setAutoCollapseTimeout();
         },
 
         closeMenu : function() {
@@ -182,12 +208,18 @@ $(function() {
             return Math.PI * degrees / 180;
         },
 
-        autoTimerEventStillValidMatcher : 1,
-
-        caller : undefined,
-
         itemClicked : function(item, context) {
             // wire up your similarly signed event function
+        },
+
+        setAutoCollapseTimeout : function(){
+            var self = this,
+                options = self.options;
+
+            if (options.autoCloseWithTimer) {
+                var match = self.autoTimerEventStillValidMatcher;
+                self.timer = setTimeout(function(){ if (self.autoTimerEventStillValidMatcher == match) { self.closeMenu.apply(self); } }, options.autoCloseTimeoutInMillis);
+            }
         }
 
     });
