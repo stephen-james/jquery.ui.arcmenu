@@ -56,19 +56,16 @@ html, body
 
 .ui-arcmenu-open-easing
 {
-  -webkit-transition-timing-function : cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
-     -moz-transition-timing-function : cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
-          transition-timing-function : cubic-bezier(.56,.18,.75,1.5), cubic-bezier(.56,.18,.75,1.5), ease-out;
-//  -webkit-transition-timing-function : ease-out, ease-out, ease-out;
-//     -moz-transition-timing-function : ease-out, ease-out, ease-out;
-//          transition-timing-function : ease-out, ease-out, ease-out;
-
+  -webkit-transition-timing-function : @ease-magneticTarget, @ease-magneticTarget, ease-out;
+     -moz-transition-timing-function : @ease-magneticTarget, @ease-magneticTarget, ease-out;
+          transition-timing-function : @ease-magneticTarget, @ease-magneticTarget, ease-out;
 }
 
 .ui-arcmenu-close-easing
 {
-  transition-timing-function : cubic-bezier(.59,-0.99,.5,.96), cubic-bezier(.59,-0.99,.5,.96), ease-out;
-//  transition-timing-function : ease-out, ease-out, ease-out;
+  -webkit-transition-timing-function : @ease-slingshot, @ease-slingshot, ease-out;
+     -moz-transition-timing-function : @ease-slingshot, @ease-slingshot, ease-out;
+          transition-timing-function : @ease-slingshot, @ease-slingshot, ease-out;
 
   .transform-rotate(360deg);
 }
