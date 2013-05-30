@@ -47,7 +47,9 @@
             try {
               var pageTracker = _gat._getTracker("UA-41332069-1");
             pageTracker._trackPageview();
-            } catch(err) {}
+            } catch(err) {
+				console.error("had a problem with Google Analytics");
+			}
           </script>
 
   </body>
