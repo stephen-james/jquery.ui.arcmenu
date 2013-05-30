@@ -20,10 +20,8 @@ $(function() {
         // the timer used for auto collapse
         timer : undefined,
 
+        // size (in one dimension because widget is square)
         size : undefined,
-
-        // validation mather for event matching
-        autoTimerEventStillValidMatcher : 1,
 
         eventHandlers : {
             itemClicked : function(item, context) {
@@ -226,8 +224,8 @@ $(function() {
                 options = self.options;
 
             if (options.autoCloseWithTimer) {
-                var match = self.autoTimerEventStillValidMatcher;
-                self.timer = setTimeout(function(){ if (self.autoTimerEventStillValidMatcher == match) { self.closeMenu.apply(self); } }, options.autoCloseTimeoutInMillis);
+                clearInterval(self.timer);
+                self.timer = setTimeout(function(){ self.closeMenu.apply(self); }, options.autoCloseTimeoutInMillis);
             }
         }
 
