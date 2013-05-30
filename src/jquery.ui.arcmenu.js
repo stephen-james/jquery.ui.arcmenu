@@ -3,7 +3,6 @@ $(function() {
         options : {
             arcDegrees : 90,
             size : "auto",
-            itemSize : "auto",
             target : "#target",
             trigger : "click",
             close : "#close",
@@ -11,7 +10,8 @@ $(function() {
             openAsModal : true,
             autoCloseWithTimer : true,
             autoCloseTimeoutInMillis : 3000,
-            itemClickHandler : undefined
+            itemClickHandler : undefined,
+            menuClosedHandler : undefined
         },
 
         // caller that initiated the arcmenu
@@ -20,15 +20,26 @@ $(function() {
         // the timer used for auto collapse
         timer : undefined,
 
+        size : undefined,
+
         // validation mather for event matching
         autoTimerEventStillValidMatcher : 1,
+
+        eventHandlers : {
+            itemClicked : function(item, context) {
+                // wire up your similarly signed event function
+            },
+
+            menuClosed : function() {
+                // wire up your similarly signed event function
+            }
+        },
 
         _create : function() {
             var self = this,
                 options = self.options,
                 menu = self.element,
-                menuItems = menu.children(),
-                menuItemsCount = menuItems.length;
+                menuItems = menu.children();
 
             // decorate the dom elements
             menu
@@ -40,21 +51,22 @@ $(function() {
                 .addClass("ui-arcmenu-item");
 
             // determine sizes
-            if (options.size == "auto") {
-                options.size = menu.outerWidth();
-            }
+            self.size = (options.size === "auto") ? menu.outerWidth() : options.size;
 
-            if (options.itemSize == "auto" && menuItems.length > 0) {
-                options.itemSize = $(menuItems[0]).outerWidth();
-            }
-
-            menuItems
-                .css({
-                        "left" : 0,
-                        "top" : options.size - options.itemSize + "px"
-                    });
+            self.placeMenuItemsInStartPosition(menuItems);
 
             self.bindEvents();
+        },
+
+        placeMenuItemsInStartPosition : function(menuItems) {
+            var self = this;
+
+            menuItems.each(function(){
+                $(this).css({
+                    "left" : 0,
+                    "top" : self.size - $(this).outerHeight() + "px"
+                });
+            });
         },
 
         bindEvents : function() {
@@ -78,20 +90,27 @@ $(function() {
             // Bind Menu Item events
             menuItems
                 .click(function(){
-                    if(self.itemClicked) { self.itemClicked(this, self.caller); }
+                    if(self.eventHandlers.itemClicked) { self.eventHandlers.itemClicked(this, self.caller); }
                 })
                 .hover(
-                function onHover(){
-                    clearInterval(self.timer);
-                },
-                function onHoverOut() {
-                    self.setAutoCollapseTimeout();
-                }
-            );
+                    function onHover(){
+                        clearInterval(self.timer);
+                    },
+                    function onHoverOut() {
+                        self.setAutoCollapseTimeout();
+                    }
+                )
+                .on("transitionend webkitTransitionEnd oTransitionEnd otransitionend", function(){
+                    $(this).data("inTransition", false);
+                    console.log("transition end event fired");
+                });
 
             // assign handler for when an arc menu item is clicked
             if (options.itemClickHandler) {
-                self.itemClicked = options.itemClickHandler;
+                self.eventHandlers.itemClicked = options.itemClickHandler;
+            }
+            if (options.menuClosedHandler) {
+                self.eventHandlers.menuClosed = options.menuClosedHandler
             }
         },
 
@@ -106,11 +125,7 @@ $(function() {
                 .each(function(){
                     var menuItem = $(this),
                         ordinal = menuItem.index(),
-                        itemPosition = self.calculateItemPositionOnArc({
-                            ordinal : ordinal,
-                            siblingsCount : menuItemsCount,
-                            element : this
-                        });
+                        itemPosition = self.calculateItemPositionOnArc(menuItem, ordinal);
 
                     menuItem
                         .addClass("ui-arcmenu-open-easing")
@@ -159,13 +174,9 @@ $(function() {
                         .removeClass("ui-arcmenu-open-easing");
 
                     self.setOrdinalBasedDelayOnItem(menuItem, ordinal, menuItemsCount, true);
-
-                    menuItem
-                        .css({
-                            "top" : self.options.size - self.options.itemSize + "px",
-                            "left" : 0
-                        });
                 });
+
+            self.placeMenuItemsInStartPosition(menuItems);
 
             menu
                 .removeClass("ui-arcmenu-open")
@@ -177,12 +188,14 @@ $(function() {
 
         },
 
-        calculateItemPositionOnArc : function(item) {
+        calculateItemPositionOnArc : function(item, index) {
             var self = this,
-                angleFromOrigin = 90 - ((item.ordinal == 0) ? 0 : self.options.arcDegrees / (item.siblingsCount - 1) * item.ordinal),
+                menu = self.element,
+                menuItems =  menu.children(),
+                angleFromOrigin = 90 - (self.options.arcDegrees / (menuItems.length - 1) * index),
                 radiansFromOrigin = self.radiansFromDegrees(angleFromOrigin),
-                itemSize = $(item.element).outerWidth(),
-                radius = self.options.size - itemSize,
+                itemSize = item.outerWidth(),
+                radius = self.size - itemSize,
                 x = Math.round(Math.cos(radiansFromOrigin) * radius),
                 y = Math.round(radius - Math.sin(radiansFromOrigin) * radius);
 
@@ -206,10 +219,6 @@ $(function() {
 
         radiansFromDegrees : function(degrees) {
             return Math.PI * degrees / 180;
-        },
-
-        itemClicked : function(item, context) {
-            // wire up your similarly signed event function
         },
 
         setAutoCollapseTimeout : function(){
