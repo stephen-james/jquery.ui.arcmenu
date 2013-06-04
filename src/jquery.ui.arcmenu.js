@@ -3,7 +3,7 @@ var ArcMenu = ArcMenu || {
     menuStates : (function(){
         // uses a closure/immediately-invoking-function pattern to create store for relationships between menu states.
         // this was primarily to avoid knowledge of states in the rest of the code and allow manipulation
-        // using next() or opposite() methods.
+        // using next(), nextTransitory() or opposite() methods.
         var self = this,
             open = { name : "open", isOpenOrOpening : true },
             closed = { name : "closed", isOpenOrOpening : false },
@@ -53,7 +53,9 @@ $(function() {
             autoCloseWithTimer : true,
             autoCloseTimeoutInMillis : 3000,
             itemClickHandler : undefined,
-            menuClosedHandler : undefined
+            menuClosedHandler : undefined,
+            menuClosingHandler : undefined,
+            menuOpeningHandler : undefined
         },
 
         // caller that initiated the arcmenu
@@ -169,6 +171,13 @@ $(function() {
             if (options.menuClosedHandler) {
                 self.eventHandlers.menuClosed = options.menuClosedHandler
             }
+            if (options.menuClosingHandler) {
+                self.eventHandlers.menuClosing = options.menuClosingHandler
+            }
+            if (options.menuOpeningHandler) {
+                self.eventHandlers.menuOpening = options.menuOpeningHandler
+            }
+
         },
 
         openMenu : function() {
