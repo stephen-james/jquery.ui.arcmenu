@@ -151,7 +151,7 @@ $(function() {
             // Bind Menu Item events
             menuItems
                 .click(function(){
-                    if(self.eventHandlers.itemClicked) {
+                    if(self.eventHandlers.itemClicked && self._getState().isOpenOrOpening) {
                         self.eventHandlers.itemClicked(this, self.caller);
                     }
                 })
