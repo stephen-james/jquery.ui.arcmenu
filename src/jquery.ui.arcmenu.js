@@ -1,3 +1,40 @@
+var ArcMenu = ArcMenu || {
+
+    menuStates : (function(){
+        // uses a closure/immediately-invoking-function pattern to create store for relationships between menu states.
+        // this was primarily to avoid knowledge of states in the rest of the code and allow manipulation
+        // using next() or opposite() methods.
+        var self = this,
+            open = { name : "open" },
+            closed = { name : "closed" },
+            opening = { name : "opening" },
+            closing = { name : "closing" };
+
+        open.next = function() { return self.ArcMenu.menuStates.closing; };
+        open.opposite = function() { return self.ArcMenu.menuStates.closed; };
+        closed.next = function() { return self.ArcMenu.menuStates.opening; };
+        closed.opposite = function() { return self.ArcMenu.menuStates.open; };
+        opening.next = function() { return self.ArcMenu.menuStates.open; };
+        opening.opposite = function() { return self.ArcMenu.menuStates.closing; };
+        closing.next = function() { return self.ArcMenu.menuStates.closed; };
+        closing.opposite = function() { return self.ArcMenu.menuStates.opening; };
+
+        return {
+            open : open,
+            closed : closed,
+            opening : opening,
+            closing : closing,
+
+            isValidStateName : function(stateName) {
+                return this.hasOwnProperty(stateName);
+            }
+        }
+    })()
+
+}
+
+
+
 $(function() {
     $.widget("custom.arcmenu", {
         options : {
@@ -23,13 +60,32 @@ $(function() {
         // size (in one dimension because widget is square)
         size : undefined,
 
+        menuStates : ArcMenu.menuStates,
+
         eventHandlers : {
             itemClicked : function(item, context) {
                 // wire up your similarly signed event function
+                console.info("arcmenu", "default itemClicked event handler");
             },
 
             menuClosed : function() {
                 // wire up your similarly signed event function
+                console.info("arcmenu", "default menuClosed event handler");
+            },
+
+            menuClosing : function() {
+                // wire up your similarly signed event function
+                console.info("arcmenu", "default menuClosing event handler");
+            },
+
+            menuOpened : function() {
+                // wire up your similarly signed event function
+                console.info("arcmenu", "default menuOpened event handler");
+            },
+
+            menuOpening : function() {
+                // wire up your similarly signed event function
+                console.info("arcmenu", "default menuOpening event handler");
             }
         },
 
@@ -42,7 +98,6 @@ $(function() {
             // decorate the dom elements
             menu
                 .addClass("ui-arcmenu")
-                .addClass("ui-arcmenu-closed")
                 .wrap("<div class='ui-arcmenu-container'></div>");
 
             menuItems
@@ -51,12 +106,13 @@ $(function() {
             // determine sizes
             self.size = (options.size === "auto") ? menu.outerWidth() : options.size;
 
-            self.placeMenuItemsInStartPosition(menuItems);
+            self._placeMenuItemsInStartPosition(menuItems);
+            self._setState("closed");
 
-            self.bindEvents();
+            self._bindEvents();
         },
 
-        placeMenuItemsInStartPosition : function(menuItems) {
+        _placeMenuItemsInStartPosition : function(menuItems) {
             var self = this;
 
             menuItems.each(function(){
@@ -67,7 +123,7 @@ $(function() {
             });
         },
 
-        bindEvents : function() {
+        _bindEvents : function() {
             var self = this,
                 options = self.options,
                 menu = self.element,
@@ -88,20 +144,18 @@ $(function() {
             // Bind Menu Item events
             menuItems
                 .click(function(){
-                    if(self.eventHandlers.itemClicked) { self.eventHandlers.itemClicked(this, self.caller); }
+                    if(self.eventHandlers.itemClicked) {
+                        self.eventHandlers.itemClicked(this, self.caller);
+                    }
                 })
                 .hover(
                     function onHover(){
                         clearInterval(self.timer);
                     },
                     function onHoverOut() {
-                        self.setAutoCollapseTimeout();
+                        self._setAutoCollapseTimeout();
                     }
-                )
-                .on("transitionend webkitTransitionEnd oTransitionEnd otransitionend", function(){
-                    $(this).data("inTransition", false);
-                    console.log("transition end event fired");
-                });
+                );
 
             // assign handler for when an arc menu item is clicked
             if (options.itemClickHandler) {
@@ -119,17 +173,20 @@ $(function() {
                 menuItemsCount = menuItems.length,
                 options = self.options;
 
+            // handle the state change to open
+            self._handleStateTransition();
+
             menuItems
                 .each(function(){
                     var menuItem = $(this),
                         ordinal = menuItem.index(),
-                        itemPosition = self.calculateItemPositionOnArc(menuItem, ordinal);
+                        itemPosition = self._calculateItemPositionOnArc(menuItem, ordinal);
 
                     menuItem
                         .addClass("ui-arcmenu-open-easing")
                         .removeClass("ui-arcmenu-close-easing");
 
-                    self.setOrdinalBasedDelayOnItem(menuItem, ordinal, menuItemsCount, false);
+                    self._setOrdinalBasedDelayOnItem(menuItem, ordinal, menuItemsCount, false);
 
                     menuItem
                         .css({
@@ -147,7 +204,7 @@ $(function() {
                 });
             }
 
-            self.setAutoCollapseTimeout();
+            self._setAutoCollapseTimeout();
         },
 
         closeMenu : function() {
@@ -155,6 +212,9 @@ $(function() {
                 menu = self.element,
                 menuItems = menu.children(),
                 menuItemsCount = menuItems.length;
+
+            // handle the state change to closed
+            self._handleStateTransition();
 
             menuItems
                 .each(function(){
@@ -165,10 +225,11 @@ $(function() {
                         .addClass("ui-arcmenu-close-easing")
                         .removeClass("ui-arcmenu-open-easing");
 
-                    self.setOrdinalBasedDelayOnItem(menuItem, ordinal, menuItemsCount, true);
+                    self._setOrdinalBasedDelayOnItem(menuItem, ordinal, menuItemsCount, true);
                 });
 
-            self.placeMenuItemsInStartPosition(menuItems);
+
+            self._placeMenuItemsInStartPosition(menuItems);
 
             if (self.options.openAsModal) {
                 $(".ui-arcmenu-modal-panel").remove();
@@ -176,12 +237,98 @@ $(function() {
 
         },
 
-        calculateItemPositionOnArc : function(item, index) {
+
+
+        _getState : function() {
+            var self = this;
+
+            return self.menuStates[self.element.data("transition-state")];
+        },
+
+        _setState : function(state) {
+            var self = this;
+
+            if (!ArcMenu.menuStates.isValidStateName(state)) {
+                throw {
+                    name : "IllegalStateError",
+                    message : "Arcmenu cannot be set to the provided unrecognised state."
+                }
+            }
+
+            // set state information
+            self.element.data("transition-state", state);
+
+            // call events
+            switch (state) {
+                case "closing" :
+                    self.eventHandlers.menuClosing();
+                    break;
+                case "closed" :
+                    self.eventHandlers.menuClosed();
+                    break;
+                case "opening"  :
+                    self.eventHandlers.menuOpening();
+                    break;
+                case "open"  :
+                    self.eventHandlers.menuOpened();
+                    break;
+            }
+        },
+
+        _handleStateTransition :  function() {
+            var self = this,
+                menu = self.element,
+                menuItems =  menu.children(),
+                currentState = self._getState();
+
+            // mark the menu as in a transitionary state
+            self._setState(currentState.next().name);
+
+            // if browser supports transitions, menu should enter the new state only once transitions complete
+            if (self._transitionsSupported()) {
+                // we have 2x the number of items as steps, because we are considering top AND left transitions here except for the edge elements
+                self.element.data("transition-step-counter", menuItems.length * 2 - 2);
+
+                menuItems
+                    .on(self._getTransitionEventString(), function(event){
+
+                        if (event.originalEvent.propertyName === "left" || event.originalEvent.propertyName === "top") {
+                            // reduce the transition steps remaining by one
+                            var transitionStepsRemaining = $(this).parent().data("transition-step-counter");
+
+                            transitionStepsRemaining--;
+
+                            $(this).parent().data("transition-step-counter", transitionStepsRemaining);
+
+                            // if there are no transition steps remaining, we have completed the transition, fire the closed event
+                            if (transitionStepsRemaining === 0) {
+                                self._finaliseMenuState();
+                            }
+                        }
+                    });
+            }
+            else {
+                self._finaliseMenuState();
+            }
+        },
+
+        _finaliseMenuState : function() {
+            var self = this,
+                menu = self.element,
+                menuItems =  menu.children(),
+                menuState = self._getState();
+
+            // remove all transition events
+            menuItems.off(self._getTransitionEventString());
+            self._setState(menuState.next().name);
+        },
+
+        _calculateItemPositionOnArc : function(item, index) {
             var self = this,
                 menu = self.element,
                 menuItems =  menu.children(),
                 angleFromOrigin = 90 - (self.options.arcDegrees / (menuItems.length - 1) * index),
-                radiansFromOrigin = self.radiansFromDegrees(angleFromOrigin),
+                radiansFromOrigin = self._radiansFromDegrees(angleFromOrigin),
                 itemSize = item.outerWidth(),
                 radius = self.size - itemSize,
                 x = Math.round(Math.cos(radiansFromOrigin) * radius),
@@ -193,7 +340,17 @@ $(function() {
             }
         },
 
-        setOrdinalBasedDelayOnItem : function(item, ordinal, siblingsCount, reverse) {
+        _setAutoCollapseTimeout : function(){
+            var self = this,
+                options = self.options;
+
+            if (options.autoCloseWithTimer) {
+                clearInterval(self.timer);
+                self.timer = setTimeout(function(){ self.closeMenu.apply(self); }, options.autoCloseTimeoutInMillis);
+            }
+        },
+
+        _setOrdinalBasedDelayOnItem : function(item, ordinal, siblingsCount, reverse) {
             var ordinalBasedDelay = ((reverse) ? (siblingsCount - ordinal)  * 0.05 : ordinal  * 0.05) + 0.2,
                 transitionDelay = item.css("transition-delay");
 
@@ -205,18 +362,16 @@ $(function() {
             item.css("transition-delay", ordinalBasedDelay + "s, " + ordinalBasedDelay + "s, " + transformDelay);
         },
 
-        radiansFromDegrees : function(degrees) {
+        _radiansFromDegrees : function(degrees) {
             return Math.PI * degrees / 180;
         },
 
-        setAutoCollapseTimeout : function(){
-            var self = this,
-                options = self.options;
+        _transitionsSupported : function() {
+            return Modernizr.csstransitions;
+        },
 
-            if (options.autoCloseWithTimer) {
-                clearInterval(self.timer);
-                self.timer = setTimeout(function(){ self.closeMenu.apply(self); }, options.autoCloseTimeoutInMillis);
-            }
+        _getTransitionEventString : function() {
+            return "webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend";
         }
 
     });
