@@ -3,7 +3,8 @@ requirejs.config({
     "urlArgs" : "bustCache=" + (new Date()).getTime(),
     "paths": {
         "demo": "../demo",
-        "arcmenu" : "../src/jquery.ui.arcmenu"
+        "arcmenu" : "../src/jquery.ui.arcmenu",
+        "modernizr" : "modernizr.css.transitions"
     },
     "shim" : {
         // are non AMD scripts
@@ -12,7 +13,7 @@ requirejs.config({
             "exports" : "jquery-ui"
         },
         "arcmenu" : {
-            "deps" : ["jquery-ui"],
+            "deps" : ["jquery-ui", "modernizr"],
             "exports" : "arcmenu"
         }
     }
