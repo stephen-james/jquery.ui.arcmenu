@@ -5,19 +5,26 @@ var ArcMenu = ArcMenu || {
         // this was primarily to avoid knowledge of states in the rest of the code and allow manipulation
         // using next() or opposite() methods.
         var self = this,
-            open = { name : "open" },
-            closed = { name : "closed" },
-            opening = { name : "opening" },
-            closing = { name : "closing" };
+            open = { name : "open", isOpenOrOpening : true },
+            closed = { name : "closed", isOpenOrOpening : false },
+            opening = { name : "opening", isOpenOrOpening : true },
+            closing = { name : "closing", isOpenOrOpening : false };
 
         open.next = function() { return self.ArcMenu.menuStates.closing; };
         open.opposite = function() { return self.ArcMenu.menuStates.closed; };
+        open.nextTransitoryState = function() { return self.ArcMenu.menuStates.closing; }
+
         closed.next = function() { return self.ArcMenu.menuStates.opening; };
         closed.opposite = function() { return self.ArcMenu.menuStates.open; };
+        closed.nextTransitoryState = function() { return self.ArcMenu.menuStates.opening; }
+
         opening.next = function() { return self.ArcMenu.menuStates.open; };
         opening.opposite = function() { return self.ArcMenu.menuStates.closing; };
+        opening.nextTransitoryState = function() { return self.ArcMenu.menuStates.closing; }
+
         closing.next = function() { return self.ArcMenu.menuStates.closed; };
         closing.opposite = function() { return self.ArcMenu.menuStates.opening; };
+        closing.nextTransitoryState = function() { return self.ArcMenu.menuStates.opening; }
 
         return {
             open : open,
@@ -32,8 +39,6 @@ var ArcMenu = ArcMenu || {
     })()
 
 }
-
-
 
 $(function() {
     $.widget("custom.arcmenu", {
@@ -173,6 +178,11 @@ $(function() {
                 menuItemsCount = menuItems.length,
                 options = self.options;
 
+            if (self._getState().isOpenOrOpening) {
+                // can't open already open
+                return;
+            }
+
             // handle the state change to open
             self._handleStateTransition();
 
@@ -212,6 +222,12 @@ $(function() {
                 menu = self.element,
                 menuItems = menu.children(),
                 menuItemsCount = menuItems.length;
+
+            if (!self._getState().isOpenOrOpening) {
+                // can't close already closed
+                return;
+            }
+
 
             // handle the state change to closed
             self._handleStateTransition();
@@ -282,7 +298,7 @@ $(function() {
                 currentState = self._getState();
 
             // mark the menu as in a transitionary state
-            self._setState(currentState.next().name);
+            self._setState(currentState.nextTransitoryState().name);
 
             // if browser supports transitions, menu should enter the new state only once transitions complete
             if (self._transitionsSupported()) {
