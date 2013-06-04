@@ -392,7 +392,14 @@ $(function() {
         },
 
         _transitionsSupported : function() {
-            return Modernizr.csstransitions;
+            var modernizr = window.Modernizr;
+
+            if (!modernizr || modernizr.csstransitions === undefined) {
+                console.error("arcmenu requires Modernizr csstransitions to detect transition support");
+                return;
+            }
+
+            return modernizr.csstransitions;
         },
 
         _getTransitionEventString : function() {
