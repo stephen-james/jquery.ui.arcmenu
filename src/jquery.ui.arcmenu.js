@@ -270,6 +270,18 @@ $(function() {
             return self.menuStates[self.element.data("transition-state")];
         },
 
+        _removeStateCssClass : function() {
+            var self = this,
+                elementClasses = self.element.attr("class");
+                matchingElementStateClasses = elementClasses.match(/ui-arcmenu-state-(open|opening|closed|closing)/g);
+
+            if (matchingElementStateClasses) {
+                $.each(matchingElementStateClasses, function(index, matchingStateClass) {
+                    self.element.removeClass(matchingStateClass);
+                });
+            }
+        },
+
         _setState : function(state) {
             var self = this;
 
@@ -282,6 +294,8 @@ $(function() {
 
             // set state information
             self.element.data("transition-state", state);
+            self._removeStateCssClass();
+            self.element.addClass("ui-arcmenu-state-" + state);
 
             // call events
             switch (state) {
