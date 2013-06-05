@@ -180,7 +180,7 @@ $(function() {
 
         },
 
-        openMenu : function() {
+        openMenu : function(caller) {
             var self = this,
                 menu = self.element,
                 menuItems = menu.children(),
@@ -191,6 +191,8 @@ $(function() {
                 // can't open already open
                 return;
             }
+
+            if (caller) { self.caller = caller; }
 
             // handle the state change to open
             self._handleStateTransition();
